@@ -4,10 +4,10 @@ var express = require('express');
 
 var app = express();
 
-app.use(express.bodyParser());
+/*app.use(express.bodyParser());
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));*/
 
 app.set('port', (process.env.PORT || 5000));
 
