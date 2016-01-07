@@ -1,6 +1,6 @@
 var express = require('express');
 //var bodyParser = require('body-parser');
-var Pusher = require('pusher');
+var Pusher = require('node-pusher');
 
 var app = express();
 
