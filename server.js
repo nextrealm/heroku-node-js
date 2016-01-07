@@ -50,4 +50,4 @@ Pusher.secret = '78ac97b8825d1adc0f48';*/
 
 
 
-pusher.trigger( 'chat_channel', 'message', { msg: "Welcome!" } );
+//pusher.trigger( 'chat_channel', 'message', { msg: "Welcome!" } );
