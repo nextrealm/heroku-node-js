@@ -19,9 +19,9 @@
       }
     });
     channel.bind('message', function(data) {
-      alert(data.message);
+      alert(data.msg);
       var div = document.getElementById('messages');
-      div.innerHTML += data.message.msg;
+      div.innerHTML += data.msg;
     });
     //channel.trigger("message", {msg: "Welcome!"});
   </script>
