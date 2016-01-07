@@ -12,18 +12,18 @@
     var pusher = new Pusher('a21c1d876b090ae230df', {
       encrypted: true
     });
-    var channel = pusher.subscribe('private-chat_channel');
+    var channel = pusher.subscribe('chat_channel');
     channel.bind('pusher:subscription_error', function(status) {
       if(status == 408 || status == 503){
         // retry?
       }
     });
-    channel.bind('client-message', function(data) {
+    channel.bind('message', function(data) {
       alert(data.message);
       var div = document.getElementById('messages');
       div.innerHTML += data.message.msg;
     });
-    channel.trigger("client-message", {msg: "Welcome!"});
+    channel.trigger("message", {msg: "Welcome!"});
   </script>
 </head>
 <body>
