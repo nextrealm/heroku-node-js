@@ -12,11 +12,11 @@
     var pusher = new Pusher('a21c1d876b090ae230df', {
       encrypted: true
     });
-    var channel = pusher.subscribe('chat_channel');
+    var channel = pusher.subscribe('private-chat_channel');
     channel.bind('client-message', function(data) {
       alert(data.message);
       var div = document.getElementById('messages');
-      div.innerHTML += 'Extra stuff';
+      div.innerHTML += data.message.msg;
     });
     channel.trigger("client-message", {msg: "Welcome!"});
   </script>
