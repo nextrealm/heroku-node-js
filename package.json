@@ -9,7 +9,7 @@
   "dependencies": {
     "ejs": "2.3.3",
     "express": "4.13.3",
-    "pusher": "3.0"
+    "pusher": "1.1.0"
   },
   "engines": {
     "node": "0.12.7"
