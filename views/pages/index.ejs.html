@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <title>Pusher Chat</title>
+  <script src="https://js.pusher.com/3.0/pusher.min.js"></script>
+  <script>
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) {
+        window.console.log(message);
+      }
+    };
+    var pusher = new Pusher('877dcb4c51c3d5b30719', {
+      encrypted: true
+    });
+    var channel = pusher.subscribe('chat_channel');
+    channel.bind('message_recieved', function(data) {
+      alert(data.message);
+      
+    });
+  </script>
+</head>
+<body>
+  <div id="messages">
+  </div>
+</body>
+</html>
