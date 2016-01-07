@@ -1,6 +1,6 @@
 var express = require('express');
 //var bodyParser = require('body-parser');
-var Pusher = require('node-pusher');
+//var Pusher = require('pusher');
 
 var app = express();
 
@@ -21,14 +21,14 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-var pusher = new Pusher({ appId: APP_ID, key: APP_KEY, secret:  APP_SECRET });
+//var pusher = new Pusher({ appId: APP_ID, key: APP_KEY, secret:  APP_SECRET });
 
-app.post('/pusher/auth', function(req, res) {
+/*app.post('/pusher/auth', function(req, res) {
   var socketId = req.body.socket_id;
   var channel = req.body.channel_name;
   var auth = pusher.authenticate(socketId, channel);
   res.send(auth);
-});
+});*/
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
