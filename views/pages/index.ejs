@@ -13,6 +13,11 @@
       encrypted: true
     });
     var channel = pusher.subscribe('private-chat_channel');
+    channel.bind('pusher:subscription_error', function(status) {
+      if(status == 408 || status == 503){
+        // retry?
+      }
+    });
     channel.bind('client-message', function(data) {
       alert(data.message);
       var div = document.getElementById('messages');
