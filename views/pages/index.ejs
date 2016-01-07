@@ -13,10 +13,12 @@
       encrypted: true
     });
     var channel = pusher.subscribe('chat_channel');
-    channel.bind('message_recieved', function(data) {
+    channel.bind('client-message', function(data) {
       alert(data.message);
-      
+      var div = document.getElementById('messages');
+      div.innerHTML += 'Extra stuff';
     });
+    channel.trigger("client-message", {msg: "Welcome!"});
   </script>
 </head>
 <body>
