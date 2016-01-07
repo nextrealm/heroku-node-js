@@ -2,6 +2,16 @@ var express = require('express');
 //var bodyParser = require('body-parser');
 //var Pusher = require('pusher');
 
+var Pusher = require('pusher');
+
+var pusher = new Pusher({
+  appId: '165033',
+  key: 'a21c1d876b090ae230df',
+  secret: '78ac97b8825d1adc0f48',
+  encrypted: true
+});
+pusher.port = 443;
+
 var app = express();
 
 /*app.use(express.bodyParser());
@@ -40,4 +50,4 @@ Pusher.secret = '78ac97b8825d1adc0f48';*/
 
 
 
-//pusher.trigger( 'chat_channel', 'message', { msg: "Welcome!" } );
+pusher.trigger( 'chat_channel', 'message', { msg: "Welcome!" } );
