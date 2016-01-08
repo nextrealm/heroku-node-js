@@ -53,7 +53,8 @@ Pusher.secret = '78ac97b8825d1adc0f48';*/
 //pusher.trigger( 'chat_channel', 'message', { msg: "Welcome!" } );
 
 app.post('/api/', function(request, response) {
-	var input = request.body.input;
+	/*var input = request.body.input;
 
-	pusher.trigger( 'chat_channel', 'message', { msg: input.message } );
+	pusher.trigger( 'chat_channel', 'message', { msg: input.message } );*/
+	console.log(request);
 });
