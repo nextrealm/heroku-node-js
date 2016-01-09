@@ -47,5 +47,7 @@ app.post('/api/', function(request, response) {
 	var input = request.body;
 
 	pusher.trigger( 'chat_channel', 'message', { msg: input.message } );
-	console.log(request);
+	console.log(input);
+
+  response.send("done");
 });
