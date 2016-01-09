@@ -44,7 +44,7 @@ app.listen(app.get('port'), function() {
 //pusher.trigger( 'chat_channel', 'message', { msg: "Welcome!" } );
 
 app.post('/api/', function(request, response) {
-	var input = request.body.input;
+	var input = request.body;
 
 	pusher.trigger( 'chat_channel', 'message', { msg: input.message } );
 	console.log(request);
